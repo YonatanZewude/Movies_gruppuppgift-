@@ -1,0 +1,26 @@
+.header {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+  }
+}
