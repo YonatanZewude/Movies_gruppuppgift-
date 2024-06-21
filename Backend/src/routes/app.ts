@@ -1,5 +1,4 @@
 import express from "express";
-import { signUp, signIn, getUser, signOut } from "../controllers/auth";
 import {
   getMovies,
   getMovieById,
@@ -29,17 +28,10 @@ router.get("/", (req, res) => {
   });
 });
 
-// Movie routes
 router.get("/movies", getMovies);
 router.get("/movies/:id", getMovieById);
 router.post("/movies", createMovie);
 router.put("/movies/:id", updateMovie);
 router.delete("/movies/:id", deleteMovie);
-
-// Auth routes
-router.post("/auth/signup", signUp);
-router.post("/auth/signin", signIn);
-router.get("/auth/user", getUser);
-router.post("/auth/signout", signOut);
 
 export default router;

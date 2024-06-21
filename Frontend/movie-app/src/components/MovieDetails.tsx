@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { fetchMovieById } from '../api';
+import '../style/MovieDetails.css'; 
 
 const MovieDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,11 +27,16 @@ const MovieDetails: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="movie-details">
       {movie ? (
         <>
           <h1>{movie.title}</h1>
+          <img src={movie.imgUrl} alt={movie.title} />
           <p>{movie.description}</p>
+          <h3>{movie.price} kr</h3>
+          <Link to={`/checkout`} state={{ price: movie.price }}>
+            <button>Köp</button>
+          </Link>
         </>
       ) : (
         <p>Loading...</p>

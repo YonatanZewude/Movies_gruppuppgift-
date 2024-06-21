@@ -1,33 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import '../style/login.css'; 
 
-const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { login } = useAuth();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await login(email, password);
-    } catch (error) {
-      console.error('Login failed', error);
-    }
-  };
+const Login = () => {
+  const navigate = useNavigate();
+  const { setEmail, setPassword, handleLogin } = useAuth();
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      </label>
-      <button type="submit">Login</button>
-    </form>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleLogin}>
+        <input
+          type="text"
+          name="email"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Do you not have an account? <button onClick={() => navigate('/')}>Sign Up</button>
+      </p>
+    </div>
   );
 };
 

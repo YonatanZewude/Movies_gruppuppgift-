@@ -1,5 +1,5 @@
 import supabase from "./config/supabase";
-import bcrypt from "bcrypt"; // För att hash lösenordet
+import bcrypt from "bcrypt";
 
 const users = [
   {
@@ -16,15 +16,12 @@ const users = [
     last_name: "Doe",
     created_at: new Date(),
   },
-  // Lägg till fler användare här
 ];
 
 const seedUsers = async () => {
   for (const user of users) {
-    // Hasha lösenordet
     const hashedPassword = await bcrypt.hash(user.password, 10);
 
-    // Sätt in användaren med det hashade lösenordet
     const { data, error } = await supabase.from("users").insert([
       {
         email: user.email,

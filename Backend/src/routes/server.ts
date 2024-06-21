@@ -1,9 +1,8 @@
 import express from "express";
 import cors from "cors";
 import session from "express-session";
-import movieRoutes from "./app";
-import authRoutes from "./auth";
-import passport from "../config/passport";
+import movieRoutes from "./movie";
+import checkoutRoutes from "./checkout";
 
 const app = express();
 
@@ -23,11 +22,8 @@ app.use(
   })
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use("/api/v1", movieRoutes);
-app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/movies", movieRoutes);
+app.use("/api/v1/checkout", checkoutRoutes);
 
 const PORT = process.env.PORT || 3000;
 
