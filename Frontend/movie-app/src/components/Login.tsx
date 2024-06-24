@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../style/login.css'; 
+import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +28,9 @@ const Login = () => {
       <p>
         Do you not have an account? <button onClick={() => navigate('/')}>Sign Up</button>
       </p>
+      <div>
+      <GoogleLogin />
+    </div>
     </div>
   );
 };
