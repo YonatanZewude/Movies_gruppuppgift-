@@ -1,76 +1,40 @@
-Webshoppen - Group Assignment
+Movie App - Group Project
 Overview
-This project involves building a webshop as a group, meeting specified requirements using PHP and supabase. The project assesses skills in planning, architecture, system design, and implementation of an e-commerce platform.
+This project involves creating a React/Next.js application that displays a list of movies fetched via a REST API. The backend is built with Express, and the application includes various features such as pagination, individual movie details, user authentication, and more.
 
-Course Objectives Examined
-Planning architecture and system design for dynamic e-commerce applications.
-Various design patterns and their impact on code quality and structure.
-Planning and developing an e-commerce platform.
-Selecting, designing, and customizing databases based on the given task.
-Designing systems and codebases based on architectural principles and design patterns.
-Project Requirements
-For a Pass Grade
-GitHub Repository:
-
-Create a private repository on GitHub.
-Invite stefan.holmberg@systementor.se as a collaborator.
-Submit the repository URL in the Student Portal.
-Database:
-
-Create and use a normalized MySQL database to manage the necessary data for your functionalities.
+Features
+Core Features
 Homepage:
 
-Display 10 popular products (you decide the criteria for popularity).
-Product Categories:
+Display a list of all movies.
+Movie Details Page:
 
-Each product belongs to one category.
-Product Page:
+Show detailed information for a single movie.
+API:
 
-Clicking on a product leads to its product page.
-Category Listing:
+Fetch all movies or a limited number with pagination.
+Fetch a movie by ID (e.g., https://movie.se/api/v1/{{movie_id}}).
+TypeScript:
 
-List all products within a category.
-Search Functionality:
+The app is written in TypeScript for type safety and better code management.
+Authentication:
 
-Implement a search feature for products.
-Search and Category Listing:
+Implement a login system with username and password.
+Optionally integrate Google login or other authentication methods (e.g., Supabase).
+Contact Section:
 
-Search results and category listings should be sortable by name and price (ASC/DESC).
-For a Distinction Grade
-Paged Search and Category Listing:
+Include a text section and an embedded Google Maps view.
+Google Analytics:
 
-Implement pagination for search results and category listings.
-Customer Login and Registration:
+Integrate Google Analytics for tracking and analytics.
+Database:
 
-Implement customer login and registration functionalities.
-Shopping Cart:
+Use Supabase, MySQL, or a simple JSON file for data storage.
+Checkout Page:
 
-Allow adding products to a shopping cart, which should be stored in the database.
-Structure and Design Patterns:
-
-Ensure good structure and use of design patterns in your code.
-Running the Project
-Initial Setup
-Clone the repository:
-
-bash
-Kopiera kod
-git clone <repository-url>
-cd webshoppen
-Install dependencies:
-
-bash
-Kopiera kod
-npm install
-Set up the database using the provided .sql file.
-
-Start the development server:
-
-bash
-Kopiera kod
-npm start
-Access the application at http://localhost:3000.
-
-Project Management
-Use Trello to manage tasks and track contributions.
-Ensure all project members make regular commits to the GitHub repository.
+Integrate Stripe for payment processing.
+Extra Features
+Deployment:
+Deploy the application on Vercel for hosting.
+Google Tag Manager:
+Set up a handler with Google Tag Manager to register button clicks.
