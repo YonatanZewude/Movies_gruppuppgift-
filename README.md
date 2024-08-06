@@ -1,6 +1,6 @@
 Webshoppen - Group Assignment
 Overview
-This project involves building a webshop as a group, meeting specified requirements using PHP and MySQL. The project assesses skills in planning, architecture, system design, and implementation of an e-commerce platform.
+This project involves building a webshop as a group, meeting specified requirements using PHP and supabase. The project assesses skills in planning, architecture, system design, and implementation of an e-commerce platform.
 
 Course Objectives Examined
 Planning architecture and system design for dynamic e-commerce applications.
